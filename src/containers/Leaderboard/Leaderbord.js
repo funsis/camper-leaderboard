@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import { Grid, Row, Table } from "react-bootstrap";
+import { connect } from "react-redux";
+import * as actions from "../../actions/index";
 import "./Lederborad.css";
 
 class Leaderboard extends Component {
+  componentWillMount() {
+    this.props.fetchRecent();
+  }
+
+  renderLeaders = () => {
+
+  }
+
   render() {
     return (
       <Grid className="leaderboard">
@@ -20,18 +30,6 @@ class Leaderboard extends Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Funsis</td>
-                <td>100</td>
-                <td>10000</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Darion</td>
-                <td>10</td>
-                <td>100</td>
-              </tr>
             </tbody>
           </Table>
         </Row>
@@ -40,4 +38,8 @@ class Leaderboard extends Component {
   }
 }
 
-export default Leaderboard;
+function mapStateToProps({ leaders }) {
+  return { leaders };
+}
+
+export default connect(mapStateToProps, actions)(Leaderboard);

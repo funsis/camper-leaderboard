@@ -3,7 +3,7 @@ import { FETCH_RECENT, FETCH_ALLTIME } from "./types";
 
 const ROOT_URL = "https://fcctop100.herokuapp.com/api/fccusers/top";
 
-function fetchRecent() {
+export function fetchRecent() {
   const url = `${ROOT_URL}/recent`;
 
   const request = axios.get(url);
@@ -14,7 +14,7 @@ function fetchRecent() {
   };
 }
 
-function fetchRecent() {
+export function fetchAlltime() {
   const url = `${ROOT_URL}/alltime`;
 
   const request = axios.get(url);
