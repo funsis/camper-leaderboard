@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
+import leadersReducer from "./leaders_reducer";
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  leaders: leadersReducer
 });
 
 export default rootReducer;
