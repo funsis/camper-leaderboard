@@ -5,6 +5,7 @@ import { createStore } from "redux";
 import reducers from "./reducers/index";
 import App from "./components/App/App";
 import registerServiceWorker from "./registerServiceWorker";
+import "./index.css";
 
 let store = createStore(reducers);
 

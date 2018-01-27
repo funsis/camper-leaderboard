@@ -1,10 +1,11 @@
 import React from 'react';
+import { Grid } from "react-bootstrap";
 
 const App = () => {
   return (
-    <div>
+    <Grid fluid={true}>
       Camper Leaderboard
-    </div>
+    </Grid>
   );
 }
 
