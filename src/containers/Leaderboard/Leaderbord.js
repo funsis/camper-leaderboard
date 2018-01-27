@@ -13,7 +13,7 @@ class Leaderboard extends Component {
           <Table striped bordered className="leaderboard__table">
             <thead>
               <tr>
-                <th>#</th>
+                <th className="leaderboard__table-number">#</th>
                 <th>Camper Name</th>
                 <th className="leaderboard__table-sort leaderboard__table-sort--active">Points in past 30 days</th>
                 <th className="leaderboard__table-sort">All time points</th>

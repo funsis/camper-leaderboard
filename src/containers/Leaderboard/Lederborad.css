@@ -27,8 +27,13 @@
   border-bottom-left-radius: 5px;
 }
 
+.leaderboard__table-number {
+  width: 5%;
+}
+
 .leaderboard__table-sort {
   position: relative;
+  width: 30%;
   text-align: center;
   color: darkgreen;
   cursor: pointer;
