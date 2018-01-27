@@ -1,6 +1,5 @@
 import axios from "axios";
-import FETCH_RECENT from "./types";
-import FETCH_ALLTIME from "./types";
+import { FETCH_RECENT, FETCH_ALLTIME } from "./types";
 
 const ROOT_URL = "https://fcctop100.herokuapp.com/api/fccusers/top";
 

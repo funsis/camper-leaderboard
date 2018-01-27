@@ -1,5 +1,4 @@
-import FETCH_RECENT from "../actions/types";
-import FETCH_ALLTIME from "../actions/types";
+import { FETCH_RECENT, FETCH_ALLTIME } from "../actions/types";
 
 export default function leadersReducer(state = [], action) {
   switch(action.type) {
