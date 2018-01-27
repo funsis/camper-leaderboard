@@ -4,10 +4,16 @@
   padding-top: 15px;
   background-color: darkgreen;
   text-align: center;
+  color: white;
+  font-weight: 400;
 }
 
 .footer__copyright {
   color: white;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
+}
+
+.footer__copyright:hover {
+  text-decoration: underline;
 }
