@@ -1,15 +1,16 @@
 import React from 'react';
-import { Grid } from "react-bootstrap";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import Leaderboard from "../../containers/Leaderboard/Leaderbord";
 import "./App.css";
 
 const App = () => {
   return (
-    <Grid fluid={true} className="app">
+    <div className="app">
       <Header />
+      <Leaderboard />
       <Footer />
-    </Grid>
+    </div>
   );
 }
 
