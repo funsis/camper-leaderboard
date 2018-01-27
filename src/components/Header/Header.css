@@ -1,0 +1,8 @@
+.header {
+  box-sizing: border-box;
+  height: 50px;
+  padding: 0 30px;
+  padding-top: 5px;
+  margin-bottom: 30px;
+  background-color: darkgreen;
+}
