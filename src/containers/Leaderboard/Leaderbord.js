@@ -1,12 +1,34 @@
 import React, { Component } from "react";
-import { Grid, Row, Table, Media, Image } from "react-bootstrap";
+import { Grid, Row, Table, Image } from "react-bootstrap";
 import { connect } from "react-redux";
 import * as actions from "../../actions/index";
 import "./Lederborad.css";
 
 class Leaderboard extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { sort: "recent" };
+  }
+
   componentWillMount() {
     this.props.fetchRecent();
+  }
+
+  onAlltimeClick = () => {
+    if (this.state.sort === "alltime") return;
+
+    this.props.fetchAlltime();
+
+    this.setState({ sort: "alltime" });
+  }
+
+  onRecentClick = () => {
+    if (this.state.sort === "recent") return;
+
+    this.props.fetchRecent();
+
+    this.setState({ sort: "recent" });
   }
 
   renderLeaders() {
@@ -54,14 +76,14 @@ class Leaderboard extends Component {
                 <th className="leaderboard__table-number">#</th>
                 <th>Camper Name</th>
                 <th
-                  className="leaderboard__table-sort leaderboard__table-sort--active"
-                  onClick={() => this.props.fetchRecent()}
+                  className={`leaderboard__table-sort ${(this.state.sort === "recent") ? "leaderboard__table-sort--active" : "" }`}
+                  onClick={this.onRecentClick}
                 >
                   Points in past 30 days
                 </th>
                 <th
-                  className="leaderboard__table-sort"
-                  onClick={() => this.props.fetchAlltime()}
+                  className={`leaderboard__table-sort ${(this.state.sort === "alltime") ? "leaderboard__table-sort--active" : "" }`}
+                  onClick={this.onAlltimeClick}
                 >
                   All time points
                 </th>

@@ -43,6 +43,10 @@
   text-decoration-color: darkgreen;
 }
 
+.leaderboard__table-sort--active {
+  cursor: default;
+}
+
 .leaderboard__loading {
   text-align: center;
 }
