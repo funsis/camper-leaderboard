@@ -9,8 +9,26 @@ class Leaderboard extends Component {
     this.props.fetchRecent();
   }
 
-  renderLeaders = () => {
+  renderLeaders() {
+   if (!this.props.leaders.length) return (
+     <tr>
+       <td colSpan="4" className="table__loading">Loading...</td>
+     </tr>
+   );
 
+   let number = 1;
+
+    return this.props.leaders.map(leader => (
+        <tr key={leader.username}>
+          <td>{number++}</td>
+          <td>
+            <img src={leader.img} alt="user avatar" width="40" height="40" />
+            {leader.username}
+          </td>
+          <td className="table__points">{leader.recent}</td>
+          <td className="table__points">{leader.alltime}</td>
+        </tr>
+    ));
   }
 
   render() {
@@ -25,12 +43,13 @@ class Leaderboard extends Component {
               <tr>
                 <th className="leaderboard__table-number">#</th>
                 <th>Camper Name</th>
-                <th className="leaderboard__table-sort leaderboard__table-sort--active">Points in past 30 days</th>
-                <th className="leaderboard__table-sort">All time points</th>
+                <th className="leaderboard__table-sort leaderboard__table-sort--active" onClick={() => this.props.fetchRecent()}>
+                  Points in past 30 days
+                </th>
+                <th className="leaderboard__table-sort" onClick={() => this.props.fetchAlltime()}>All time points</th>
               </tr>
             </thead>
-            <tbody>
-            </tbody>
+            <tbody>{this.renderLeaders()}</tbody>
           </Table>
         </Row>
       </Grid>

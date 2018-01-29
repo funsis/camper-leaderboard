@@ -23,8 +23,8 @@
   font-size: 18px;
   border: 1px solid black;
   border-collapse: inherit;
-  border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .leaderboard__table-number {
@@ -32,7 +32,6 @@
 }
 
 .leaderboard__table-sort {
-  position: relative;
   width: 30%;
   text-align: center;
   color: darkgreen;
@@ -42,13 +41,4 @@
 .leaderboard__table-sort--active {
   text-decoration: underline;
   text-decoration-color: darkgreen;
-}
-
-.leaderboard__table-sort--active::after {
-  content: "";
-  position: absolute;
-  right: 50px;
-  top: 18px;
-  border: 4px solid transparent;
-  border-top: 8px solid darkgreen;
 }
