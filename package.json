@@ -2,7 +2,7 @@
   "name": "campers-leaderboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://funsis.github.io/campers-leaderboard",
+  "homepage": "https://funsis.github.io/camper-leaderboard",
   "dependencies": {
     "axios": "^0.17.1",
     "react": "^16.2.0",
