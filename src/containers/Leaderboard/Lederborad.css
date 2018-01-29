@@ -42,3 +42,23 @@
   text-decoration: underline;
   text-decoration-color: darkgreen;
 }
+
+.leaderboard__loading {
+  text-align: center;
+}
+
+.leaderboard__username-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  border: 2px solid darkgreen;
+}
+
+.leaderboard__points {
+  text-align: center;
+  vertical-align: middle !important;
+}
+
+.leaderboard__position {
+  vertical-align: middle !important;
+}

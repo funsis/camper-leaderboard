@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Row, Table } from "react-bootstrap";
+import { Grid, Row, Table, Media, Image } from "react-bootstrap";
 import { connect } from "react-redux";
 import * as actions from "../../actions/index";
 import "./Lederborad.css";
@@ -10,24 +10,34 @@ class Leaderboard extends Component {
   }
 
   renderLeaders() {
-   if (!this.props.leaders.length) return (
-     <tr>
-       <td colSpan="4" className="table__loading">Loading...</td>
-     </tr>
-   );
+    if (!this.props.leaders.length)
+      return (
+        <tr>
+          <td colSpan="4" className="leaderboard__loading">
+            Loading...
+          </td>
+        </tr>
+      );
 
-   let number = 1;
+    let position = 1;
 
     return this.props.leaders.map(leader => (
-        <tr key={leader.username}>
-          <td>{number++}</td>
-          <td>
-            <img src={leader.img} alt="user avatar" width="40" height="40" />
+      <tr key={leader.username}>
+        <td className="leaderboard__position">{position++}</td>
+        <td>
+          <a href={`https://www.freecodecamp.org/${leader.username}`}>
+            <Image
+              src={leader.img}
+              className="leaderboard__username-img"
+              alt="user avatar"
+              rounded
+            />
             {leader.username}
-          </td>
-          <td className="table__points">{leader.recent}</td>
-          <td className="table__points">{leader.alltime}</td>
-        </tr>
+          </a>
+        </td>
+        <td className="leaderboard__points">{leader.recent}</td>
+        <td className="leaderboard__points">{leader.alltime}</td>
+      </tr>
     ));
   }
 
@@ -43,10 +53,18 @@ class Leaderboard extends Component {
               <tr>
                 <th className="leaderboard__table-number">#</th>
                 <th>Camper Name</th>
-                <th className="leaderboard__table-sort leaderboard__table-sort--active" onClick={() => this.props.fetchRecent()}>
+                <th
+                  className="leaderboard__table-sort leaderboard__table-sort--active"
+                  onClick={() => this.props.fetchRecent()}
+                >
                   Points in past 30 days
                 </th>
-                <th className="leaderboard__table-sort" onClick={() => this.props.fetchAlltime()}>All time points</th>
+                <th
+                  className="leaderboard__table-sort"
+                  onClick={() => this.props.fetchAlltime()}
+                >
+                  All time points
+                </th>
               </tr>
             </thead>
             <tbody>{this.renderLeaders()}</tbody>
