@@ -5,7 +5,10 @@ import "./Fotter.css";
 const Footer = () => {
   return (
     <Grid fluid={true} className="footer">
-      By <a href="https://github.com/funsis" className="footer__copyright">@funsis</a>
+      By{" "}
+      <a href="https://github.com/funsis" className="footer__copyright">
+        @funsis
+      </a>
     </Grid>
   );
 };

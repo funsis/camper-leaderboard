@@ -21,7 +21,7 @@ class Leaderboard extends Component {
     this.props.fetchAlltime();
 
     this.setState({ sort: "alltime" });
-  }
+  };
 
   onRecentClick = () => {
     if (this.state.sort === "recent") return;
@@ -29,7 +29,7 @@ class Leaderboard extends Component {
     this.props.fetchRecent();
 
     this.setState({ sort: "recent" });
-  }
+  };
 
   renderLeaders() {
     if (!this.props.leaders.length)
@@ -76,13 +76,21 @@ class Leaderboard extends Component {
                 <th className="leaderboard__table-number">#</th>
                 <th>Camper Name</th>
                 <th
-                  className={`leaderboard__table-sort ${(this.state.sort === "recent") ? "leaderboard__table-sort--active" : "" }`}
+                  className={`leaderboard__table-sort ${
+                    this.state.sort === "recent"
+                      ? "leaderboard__table-sort--active"
+                      : ""
+                  }`}
                   onClick={this.onRecentClick}
                 >
                   Points in past 30 days
                 </th>
                 <th
-                  className={`leaderboard__table-sort ${(this.state.sort === "alltime") ? "leaderboard__table-sort--active" : "" }`}
+                  className={`leaderboard__table-sort ${
+                    this.state.sort === "alltime"
+                      ? "leaderboard__table-sort--active"
+                      : ""
+                  }`}
                   onClick={this.onAlltimeClick}
                 >
                   All time points

@@ -1,2 +1,2 @@
 export const FETCH_RECENT = "FETCH_RECENT";
-export const FETCH_ALLTIME = "FETCH_ALLTIME"
+export const FETCH_ALLTIME = "FETCH_ALLTIME";
